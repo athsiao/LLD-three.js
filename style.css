@@ -1,0 +1,47 @@
+body {
+    font-family: "Rubik", sans-serif;
+    background-color: var(--color-bg);
+    margin: 0;
+  }
+  
+  canvas {
+    display: block;
+  }
+  
+  /* Title */
+  
+  .landingText {
+    float: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {  
+    margin: 0;
+    padding: 0;
+  
+    font-size: 50px;
+    /*font-style: italic;*/
+    font-weight: 600;
+    letter-spacing: 10px;
+  
+    text-shadow: 0px 0px 15px #E9BE91, 0px 0px 25px #0a0509;
+    color: #FFFAEE;
+  }
+  
+  h2 {
+    margin: 0;
+    padding: 0;
+  
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-shadow: 0px 0px 12px #E9BE91, 0px 0px 25px #0a0509;
+    color: #FFFAEE;
+  }
+  
