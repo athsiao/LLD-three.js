@@ -76,56 +76,26 @@
     var raycaster = new THREE.Raycaster();
     var mouse = new THREE.Vector2();
 
-    // Define shape
-    var geometry = new THREE.IcosahedronGeometry(1.5, 0); // radius, detail
-    var material = new THREE.MeshPhongMaterial({ color: 0xFEB979 });
-    
-    // Add multiple shapes to the scene
-    for (var i = 0; i < 15; i++) {
-      var shape = new THREE.Mesh(geometry, material);
+    // TODO: Define a shape (primitive)
 
-      /*  Randomly chooses a position:
-          A number -0.5 to 0.5 scaled differently in different dimensions  */
-      shape.position.x = (Math.random() - 0.5) * 40;
-      shape.position.y = (Math.random() - 0.5) * 8;
-      shape.position.z = (Math.random() + 0.2) * -5;
+    // TODO: Add random, procedurally generated shapes to the scene
 
-      // Configures shadows
-      shape.castShadow = true;
-      shape.receiveShadow = true;
+    // TODO: Add a directional light
 
-      scene.add(shape);
-    }
 
-    // Add directional light
-    var dLight = new THREE.DirectionalLight(0x00A3FF, 0.6); // color, intensity
-    dLight.position.set(10, 0, 25); // x, y, z
-    scene.add(dLight);
+    // TODO: Add an ambient light
 
-    // Add ambient light
-    var aLight = new THREE.AmbientLight(0xFF002E, 0.6); // color, intensity
-    scene.add(aLight);
 
-    // Add mouse light
-    var mLight = new THREE.PointLight(0xE9BE91, 0.8); // color, intensity, distance
-    mLight.position.set(0, 0, -2.5); // x, y, z
-    scene.add(mLight);
-    mLight.castShadow = true;
+    // TODO: Add a light attached to the mouse
+
 
     // Every frame, do this
     var render = function() {
       requestAnimationFrame(render);
 
-      // If light is not completely dimmed, slowly dim light
-      if (mLight.intensity > 0) {
-        mLight.intensity -= 0.005;
-      }
+      // TODO: If the light is not completely dim, slowly dim the light
 
-      var intersects = raycaster.intersectObjects(scene.children, true);
-      for (var i = 0; i < intersects.length; i++) {
-        intersects[i].object.rotation.x += 0.05;
-        //intersects[i].object.material.color.set(0xEAFEFF);
-      }
+      // TODO: Using the raycaster, rotate an object when hovered over
 
       renderer.render(scene, camera);
     }
@@ -138,9 +108,8 @@
 
       raycaster.setFromCamera(mouse, camera);
 
-      // Moves light according to mouse position
-      mLight.position.set(mouse.x * 16, mouse.y * 9, -1);
-      mLight.intensity = 0.8;
+      // TODO: Move light according to the camera position
+
     }
 
     render();
